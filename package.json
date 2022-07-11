@@ -1,0 +1,20 @@
+{
+    "name": "easy-chat-room",
+    "version": "1.0.1",
+    "description": "simple chat room app",
+    "main": "./server/server.js",
+    "scripts": {
+        "dev": "nodemon ./server/server.js",
+        "start": "node ./server/server.js"
+    },
+    "author": "Max Ahrend",
+    "license": "MIT",
+    "dependencies": {
+        "express": "^4.17.1",
+        "socket-io-anti-spam": "^2.5.0",
+        "socket.io": "^2.3.0"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.4"
+    }
+}

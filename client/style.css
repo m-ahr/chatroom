@@ -1,0 +1,194 @@
+/* global variables */
+
+:root {
+    --mainColor: rgb(55, 58, 117);
+    --hoverColor: rgb(78, 80, 117);
+    --roomColor: rgb(34, 34, 51);
+    --neutralColor: rgb(170, 170, 170);
+    --textFieldColor: rgb(68, 68, 85);
+    --loginColor: rgb(153, 247, 153);
+    --leftPad: 40px;
+    --titleHeight: 100px;
+    --roomHeaderHeight: 100px;
+    --inputsHeight: 100px;
+    --titleFont: "Lucida Sans", sans-serif;
+    --mainFont: "Segoe UI", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* body and wrapper */
+
+body {
+    background-color: var(--mainColor);
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-family: var(--mainFont);
+}
+
+#wrapper {
+    height: 100%;
+}
+
+/* title */
+
+#title {
+    padding: 0px var(--leftPad);
+    height: var(--titleHeight);
+    font-family: var(--mainFont);
+    font-size: 40px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#logo {
+    margin-left: 25px;
+}
+
+#logoutButton {
+    display: none;
+    color: var(--neutralColor);
+    font-size: 30px;
+}
+
+#logoutButton:hover {
+    color: white;
+    cursor: pointer;
+}
+
+/* login form */
+
+#loginForm {
+    background-color: var(--roomColor);
+    padding: 10px var(--leftPad);
+    color: var(--loginColor);
+}
+
+#loginAlert {
+    transition: all 200ms ease-in;
+}
+
+.alert {
+    transform: translateX(10px);
+    color: yellow;
+}
+
+/* inputs */
+
+input {
+    font-size: inherit;
+    font-family: inherit;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+
+input[type="text"] {
+    padding: 10px;
+    margin-right: 10px;
+    background-color: var(--textFieldColor);
+}
+
+input[type="button"] {
+    padding: 10px 20px;
+    background-color: var(--mainColor);
+}
+
+input[type="button"]:hover {
+    background-color: var(--hoverColor);
+    cursor: pointer;
+}
+
+/* chat room */
+
+#room {
+    background-color: var(--roomColor);
+    padding: 0px var(--leftPad);
+    height: calc(100vh - var(--titleHeight));
+}
+
+/* room header */
+
+#roomHeader {
+    color: yellow;
+    height: var(--roomHeaderHeight);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#topicInput {
+    border-radius: 0;
+    padding: 0;
+    background-color: var(--roomColor);
+    width: 70%;
+    color: orange;
+}
+
+#userList {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: auto;
+    scrollbar-color: var(--textFieldColor) var(--roomColor);
+}
+
+#roomHeader span {
+    white-space: nowrap;
+    padding: 1px 4px;
+}
+
+.userSpan {
+    border-radius: 5px;
+    border: 1px solid transparent;
+}
+
+.userSpan:hover {
+    cursor: pointer;
+    border: 1px solid var(--hoverColor);
+}
+
+/* messages */
+
+#messages {
+    height: calc(100% - var(--roomHeaderHeight) - var(--inputsHeight));
+    border-bottom: 1px solid var(--mainColor);
+    border-top: 1px solid var(--mainColor);
+    padding: 20px 0px;
+    overflow: auto;
+}
+
+/* inputs */
+
+#inputs {
+    display: flex;
+    align-items: center;
+    height: var(--inputsHeight);
+}
+
+#messageInput {
+    width: 70%;
+    margin-right: 0px;
+    margin-left: 10px;
+}
+
+/* message */
+
+.message {
+    margin: 6px 0px;
+}
+
+.message a {
+    color: inherit;
+}
+
+.timeStamp {
+    font-size: 15px;
+    color: var(--neutralColor);
+    margin-right: 6px;
+}
